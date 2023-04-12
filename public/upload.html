@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFGO</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <script defer src="js/renderer.js"></script>
+</head>
+
+<body>
+
+    <header id="titlebar">
+        <div id="drag-region">
+  
+          <div id="window-controls">
+    
+            <div class="button" id="min-button">
+                <i class='bx bxs-circle' style="color: orange;" draggable="false"></i>
+            </div>
+            <div class="button" id="close-button">
+                <i class='bx bxs-circle' style="color: red;" draggable="false"></i>
+            </div>
+  
+          </div>
+        </div>
+      </header>
+
+
+
+    <!-- Title -->
+    <div class="container">
+        <h1 class="text-center title">UFGO</h1>
+    </div>
+
+    <!-- Upload Form -->
+    <div class="container">
+        <div class="upload">
+            <div class="link">
+                <label>Liens du ficher</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control file" id="link" value="https://gofile.io/d/xxxxxxxxxx"
+                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary clip" type="button" id="button-addon2" onclick="copy()"><i
+                            class='bx bx-clipboard'></i> Copier</button>
+                </div>
+                
+                <!--QR code -->
+                <!-- <label>QR Code</label>
+                <div class="qr text-center">
+                    <img id="qrcode" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://gofile.io/d/xxxxxxxxxx" alt="QR Code">
+                </div> -->
+                
+            </div>
+            <!-- back-->
+            <div class="back">
+                <a class="btn" href="index.html"><i class='bx bx-arrow-back'></i> Retour</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="status" style="margin: 12px;">
+        <div class="alert alert-success none" role="alert" id="success">
+            <i class='bx bxs-check-circle'></i> Le fichier a bien été uploadé !
+          </div>
+          <div class="alert alert-danger none" role="alert" id="erreur">
+            <i class='bx bxs-error-circle' ></i> Une erreur est survenue lors de l'upload du fichier !
+          </div>
+    </div>
+
+
+    <!-- Footer -->
+    <div class="fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="text-center">UFGO by Luss - 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../src/upload.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    border-radius: 100px;
+    height: 100%;
+}
+
+:root{
+    /* ===== Colors ===== */
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #695CFE;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.6s ease;
+}
+
+#titlebar {
+    top: 0;
+    background-color: var(--sidebar-color);
+    display: block;
+    position: fixed;
+    height: 20px;
+    width: calc(100% - 2px);
+  }
+  
+  .maximized #titlebar {
+    width: 100%;
+    padding: 0;
+  }
+  
+  #main {
+    height: calc(100% - 32px);
+    margin-top: 0px;
+    padding: 0px;
+    overflow-y: auto;
+  }
+  
+  #titlebar {
+    padding: 4px;
+  }
+  
+  #titlebar #drag-region {
+    width: 100%;
+    height: 100%;
+    -webkit-app-region: drag;
+  }
+  
+  #titlebar {
+    color: #FFF;
+  }
+  
+  #titlebar #drag-region {
+    display: grid;
+    grid-template-columns: auto 138px;
+  }
+  
+  #window-title {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    overflow: hidden;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 12px;
+  }
+  
+  .maximized #window-title {
+    margin-left: 12px;
+  }
+  
+  #window-title span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.5;
+  }
+  
+  #window-controls {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(3, 10px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+  
+  #window-controls {
+    -webkit-app-region: no-drag;
+  }
+  
+  #window-controls .button {
+    grid-row: 1 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  @media (-webkit-device-pixel-ratio: 1.5), (device-pixel-ratio: 1.5),
+  (-webkit-device-pixel-ratio: 2), (device-pixel-ratio: 2),
+  (-webkit-device-pixel-ratio: 3), (device-pixel-ratio: 3) {
+    #window-controls .icon {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  
+  #window-controls .button {
+    user-select: none;
+  }
+  
+
+  
+  #close-button:hover {
+    color: #f96975 !important;
+  }
+  
+  #close-button:active {
+    color: #F1707A !important;
+  }
+  #close-button:active .icon {
+    filter: invert(1);
+  }
+  
+  #min-button {
+    grid-column: 1;
+  }
+  #max-button, #restore-button {
+    grid-column: 2;
+  }
+  #close-button {
+    grid-column: 3;
+  }
+  
+  #restore-button {
+    display: none !important;
+  }
+  
+  .maximized #restore-button {
+    display: flex !important;
+  }
+  
+  .maximized #max-button {
+    display: none;
+  }
+
+body{
+    
+    height: 100%;
+    margin-top: 40px;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+    border-radius: 10px;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: hidden;
+    color: var(--text-color);
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+}
+
+.top-bar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: var(--sidebar-color);
+    height: 20px;
+    
+}
+
+
+
+.title {
+    margin-top: 20px;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 0 20px;
+    border-radius: 10px;
+    transition: var(--tran-05);
+
+}
+
+.title {
+    background: linear-gradient(90deg, #f35cfe, #695cfe);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
+}
+
+.upload {
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--sidebar-color)
+}
+
+.file {
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+.file:hover {
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+}
+
+.file:focus {
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+}
+
+.btn {
+    background-color: #695CFE;
+    border: none;
+    text-decoration: none;
+    
+}
+
+.btn:hover {
+    background-color:#7f74ff;
+}
+
+.none {
+    display: none;
+}
+
+.clip {
+    color: #fff;
+}
+
+.status {
+    transition: var(--tran-05); 
+}

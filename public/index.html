@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFGO</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <script defer src="js/renderer.js"></script>
+</head>
+
+<body>
+
+    <!-- close bar
+    <div class="top-bar">
+        <div id="drag-region">
+            <div class="titlebarbtn" id="window-controls">
+                <div class="button" id="min-button">
+                    <a id="min_a" draggable="false"><i class='bx bxs-circle' style="color: orange;"></i></a>
+                </div>
+                <div class="button" id="max-button">
+                    <a id="max_a" draggable="false"><i class='bx bxs-circle' style="color: #66DC23"></i></a>
+                </div>
+                <div class="button" id="close-button">
+                    <a id="close_a" draggable="false"><i class='bx bxs-circle' style="color: red;"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <header id="titlebar">
+        <div id="drag-region">
+  
+          <div id="window-controls">
+    
+            <div class="button" id="min-button">
+                <i class='bx bxs-circle' style="color: orange;" draggable="false"></i>
+            </div>
+            <div class="button" id="close-button">
+                <i class='bx bxs-circle' style="color: red;" draggable="false"></i>
+            </div>
+  
+          </div>
+        </div>
+      </header>
+
+
+    <!-- Title -->
+    <div class="container">
+        <h1 class="text-center title">UFGO</h1>
+    </div>
+
+    <!-- Upload Form -->
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-12">
+                <form class="upload">
+                    <div class="mb-3">
+                        <input class="form-control file" type="file" name="file" id="file" placeholder="test">
+                    </div>
+                    <div class="text-center">
+                        <button type="button" onclick="upload()" id="up" class="btn btn-primary"><i
+                                class='bx bx-cloud-upload'></i> Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="status text-center" style="margin: 3px;">
+        <div class="none" role="alert" id="success" style="color: #66DC23;">
+            <i class='bx bxs-check-circle'></i> Le fichier a bien été uploadé !
+        </div>
+        <div class="none" role="alert" id="erreur" style="color: red;">
+            <i class='bx bxs-error-circle'></i> Une erreur est survenue lors de l'upload du fichier !
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="text-center">UFGO by Luss - 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../src/get_interaction.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>
